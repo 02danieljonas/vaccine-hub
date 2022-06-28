@@ -1,4 +1,5 @@
 const {UnauthorizedError} = require("../utils/errors")
+const {db} = require("../db")
 
 class User {
     static async login(credentials){
@@ -11,6 +12,7 @@ class User {
         //if there is a match return the user
 
         //if any of this goes wrong throw an error
+
         throw new UnauthorizedError("Invalid email or password")
     }
     static async register(credentials){
